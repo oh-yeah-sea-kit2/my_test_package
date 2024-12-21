@@ -11,29 +11,70 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/to/develop-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+# my_test_package
 
-## Features
+カスタマイズ可能なFlutterボタンウィジェットを提供するパッケージです。
+Material Designに準拠したボタンをより簡単に実装できます。
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+## 機能
 
-## Getting started
+- カスタマイズ可能なボタンウィジェット（CustomButton）
+- Material Designに準拠したデザイン
+- デバッグモードでのビルド状態の可視化
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+## 導入方法
 
-## Usage
+`pubspec.yaml`に以下を追加してください：
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+```yaml
+dependencies:
+  my_test_package:
+    git:
+      url: https://github.com/oh-yeah-sea-kit2/my_test_package.git
+      ref: develop  # または特定のタグやコミットハッシュ
 ```
 
-## Additional information
+その後、以下のコマンドを実行してください：
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+```bash
+flutter pub get
+```
+
+## 使用方法
+
+### 基本的な使用方法
+
+```dart
+import 'package:my_test_package/my_test_package.dart';
+
+// ボタンの実装例
+CustomButton(
+  text: 'Click me',
+  onPressed: () {
+    print('Button pressed!');
+  },
+)
+```
+
+### パラメータ
+
+- `text`: ボタンに表示するテキスト（必須）
+- `onPressed`: ボタンが押された時のコールバック関数（必須）
+
+## その他の情報
+
+- バグ報告やフィーチャーリクエストは[GitHubのIssues](https://github.com/oh-yeah-sea-kit2/my_test_package/issues)にお願いします
+- コントリビューションは大歓迎です！プルリクエストをお待ちしています
+- このパッケージはMITライセンスの下で公開されています
+
+## テスト
+
+パッケージのテストを実行するには：
+
+```bash
+flutter test
+```
+
+## ライセンス
+
+MIT License - 詳細は[LICENSE](LICENSE)ファイルを参照してください。
